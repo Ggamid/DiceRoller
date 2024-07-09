@@ -12,4 +12,11 @@ struct Dice: Identifiable, Codable {
     let date: String
     let num: Int
     let range: Int
+    
+    init(id: UUID = UUID(), date: String, num: Int, range: Int) {
+        self.id = id
+        self.date = Date().formatted(Date.FormatStyle().year().month().day().hour().minute())
+        self.num = num
+        self.range = range
+    }
 }

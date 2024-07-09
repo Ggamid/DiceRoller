@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var rotationAngle = 0.0
     @State private var range: Int = 6
     @State private var rotatationTime = 0.0
+    @State private var scaleEffectValue = 1.0
+    @State private var isBtnDisabled = false
     
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -33,17 +35,23 @@ struct ContentView: View {
                         Text(num != nil ? "\(num!)" : "")
                             .fontWeight(.black)
                             .font(.system(size: 120))
+                            
                     }
                     .rotation3DEffect(
                         Angle(degrees: rotationAngle),
                         axis: (x: 1.0, y: 0.0, z: 0.0)
                     )
-                    
+                    .scaleEffect(scaleEffectValue)
                 }
                 
                 Button {
+                    isBtnDisabled = true
                     rotatationTime = 4
                     self.timer = Timer.publish(every: 0.2, on: .current, in: .common).autoconnect()
+                    withAnimation {
+                        scaleEffectValue = 1
+                    }
+                    
                 } label: {
                     Text("roll!")
                         .frame(width: 280,height: 65)
@@ -55,6 +63,8 @@ struct ContentView: View {
                     
                     
                 }
+                .buttonStyle(ScaleButtonStyle())
+                .disabled(isBtnDisabled)
             }
             .navigationTitle("Dice Roller 🎲")
             .toolbar{
@@ -81,6 +91,10 @@ struct ContentView: View {
             } else {
                 print("\(String(describing: num))")
                 timer.upstream.connect().cancel()
+                withAnimation {
+                    scaleEffectValue+=0.4
+                }
+                isBtnDisabled = false
             }
         })
     }
@@ -90,6 +104,12 @@ struct ContentView: View {
     ContentView()
 }
 
+struct ScaleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.8 : 1)
+    }
+}
 
 
 extension Color {
