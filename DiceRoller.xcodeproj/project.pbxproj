@@ -13,6 +13,7 @@
 		87A285002C3D410300D57EB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A284FF2C3D410300D57EB9 /* Preview Assets.xcassets */; };
 		87A285072C3D412100D57EB9 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A285062C3D412000D57EB9 /* Dice.swift */; };
 		87A2850B2C3D5C9400D57EB9 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2850A2C3D5C9400D57EB9 /* ContentView-ViewModel.swift */; };
+		87A2850D2C3D623700D57EB9 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2850C2C3D623700D57EB9 /* MoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		87A284FF2C3D410300D57EB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		87A285062C3D412000D57EB9 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		87A2850A2C3D5C9400D57EB9 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		87A2850C2C3D623700D57EB9 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				87A284F82C3D410100D57EB9 /* DiceRollerApp.swift */,
 				87A284FA2C3D410100D57EB9 /* ContentView.swift */,
+				87A2850C2C3D623700D57EB9 /* MoreView.swift */,
 				87A2850A2C3D5C9400D57EB9 /* ContentView-ViewModel.swift */,
 				87A285062C3D412000D57EB9 /* Dice.swift */,
 				87A284FC2C3D410300D57EB9 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				87A2850B2C3D5C9400D57EB9 /* ContentView-ViewModel.swift in Sources */,
 				87A285072C3D412100D57EB9 /* Dice.swift in Sources */,
 				87A284F92C3D410100D57EB9 /* DiceRollerApp.swift in Sources */,
+				87A2850D2C3D623700D57EB9 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +292,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +322,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

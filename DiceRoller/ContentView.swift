@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var num: Int? = 6
+    @State private var num: Int = 6
     @State private var rotationAngle = 0.0
-    @State private var range: Int = 6
+    @State private var range: Double = 6
     @State private var rotatationTime = 0.0
     @State private var scaleEffectValue = 1.0
     @State private var isBtnDisabled = false
+    private var viewModel = ViewModel()
     
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -32,7 +33,7 @@ struct ContentView: View {
                             .frame(width: 200, height: 200)
                             .shadow(radius: 40)
                         
-                        Text(num != nil ? "\(num!)" : "")
+                        Text("\(num)")
                             .fontWeight(.black)
                             .font(.system(size: 120))
                             
@@ -69,8 +70,8 @@ struct ContentView: View {
             .navigationTitle("Dice Roller 🎲")
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        
+                    NavigationLink {
+                        MoreView(range: $range, dices: viewModel.dices)
                     }label: {
                         Image(systemName: "ellipsis")
                             .font(.system(size: 30))
@@ -85,7 +86,7 @@ struct ContentView: View {
                     rotationAngle += 180
                     num = 1000
                     rotationAngle += 180
-                    num = Int.random(in: 0...range)
+                    num = Int.random(in: 0...Int(range))
                 }
                 rotatationTime -= 1
             } else {
@@ -95,6 +96,7 @@ struct ContentView: View {
                     scaleEffectValue+=0.4
                 }
                 isBtnDisabled = false
+                viewModel.addDice(dice: Dice(num: num, range: Int(range)))
             }
         })
     }

@@ -40,7 +40,7 @@ extension ContentView {
         
         // add func
         func addDice(dice: Dice) {
-            dices.append(dice)
+            dices.insert(dice, at: 0)
             save()
         }
         
